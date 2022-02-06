@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.my-btn {
+    @apply px-6 py-2 bg-gray-500 text-white mt-2 rounded-lg hover:bg-gray-600 active:bg-opacity-0 active:text-black shadow shadow-gray-400;
+}
+
+.primary-input{
+    @apply p-2 block w-full mt-3 rounded-md focus:outline-none focus:ring-2 ring-rose-300 shadow;
+}
