@@ -27,7 +27,7 @@ const Login = () => {
                 <h1 className="text-4xl text-center">Login</h1>
                 <p className="text-center">Paste Your Token Here</p>
                 <div className="">
-                    <input ref={inputRef} type="text" className="primary-input" placeholder="Token Here" />
+                    <input ref={inputRef} type="text" className="primary-input" name="token" placeholder="Token Here" />
                     <div className="text-right">
                         <button onClick={handleLogin} className="my-btn">
                             Submit
