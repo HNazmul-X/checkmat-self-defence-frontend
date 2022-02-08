@@ -11,6 +11,7 @@ const Registration = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        if (!isNumberFieldValid.age) return;
         setIsSpinner(true);
         const formApi = new FormData(e.currentTarget);
         let formData = Object.fromEntries(formApi.entries());
@@ -26,6 +27,7 @@ const Registration = () => {
             .then((data) => {
                 if (data?.success) {
                     Swal.fire("Successfully Added", `You data successfully Added. Your Id is ${data?.id}`, "success");
+                    setIsSpinner(false);
                 } else {
                     Swal.fire("Error", data.message, "error");
                     setIsSpinner(false);
@@ -61,7 +63,15 @@ const Registration = () => {
                         <label className="font-medium text-lg text-gray-600" htmlFor="name">
                             Age
                         </label>
-                        <input type="text" placeholder="number only" name="email" required className="primary-input mt-0" />
+                        <input
+                            type="text"
+                            onChange={(e) => setIsNumberFieldValid({ ...isNumberFieldValid, age: /^\d+$/.test(e.currentTarget?.value) })}
+                            placeholder="number only"
+                            name="age"
+                            required
+                            className="primary-input mt-0"
+                        />
+                        {isNumberFieldValid?.age || <small className="text-red-500">Please Enter Number Only</small>}
                     </div>
                     <div className="my-5 mb-0">
                         <label className="font-medium text-lg text-gray-600" htmlFor="name">
@@ -104,7 +114,7 @@ const Registration = () => {
                         {martialArt === "Yes" && (
                             <>
                                 <label className="font-medium text-gray-600">If yes, which one?</label>
-                                <input type="text" className="primary-input" placeholder="" name="" id="" />
+                                <input type="text" className="primary-input" placeholder="" name="martialArtType" id="" />
                             </>
                         )}
                     </div>

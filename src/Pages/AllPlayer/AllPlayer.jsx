@@ -45,41 +45,51 @@ const AllPlayer = () => {
 
             <div className="table-container container">
                 {!tableDataLoading ? (
-                    <table className="w-full border-collapse border border-gray-300">
-                        <thead>
-                            <tr>
-                                <th className="text-left px-2 py-1 border-collapse border border-gray-300">Serial</th>
-                                <th className="text-left px-2 py-1 border-collapse border border-gray-300">Name</th>
-                                <th className="text-left px-2 py-1 border-collapse border border-gray-300">Email</th>
-                                <th className="text-left px-2 py-1 border-collapse border border-gray-300">Material Art</th>
-                                <th className="text-left px-2 py-1 border-collapse border border-gray-300">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {allPlayer?.map((people, index) => {
-                                return (
+                    <>
+                        {allPlayer.length > 0 ? (
+                            <table className="w-full border-collapse border border-gray-300">
+                                <thead>
                                     <tr>
-                                        <td className="px-2 py-1 border-collapse border border-gray-300 antialiased ">{index + 1}</td>
-                                        <td className="px-2 py-1 border-collapse border border-gray-300 antialiased ">{people?.name}</td>
-                                        <td className="px-2 py-1 border-collapse border border-gray-300 antialiased ">{people?.email}</td>
-                                        <td className="px-2 py-1 border-collapse border border-gray-300 antialiased ">{people?.isInM_Art}</td>
-                                        <td tabIndex={1} className="px-2 py-1 border-collapse border border-gray-300 antialiased focus:bg-red-200 ">
-                                            <svg
-                                                onClick={() => handleDelete(people?._id)}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                className="text-red-500 cursor-pointer hover:text-red-900"
-                                                role="img"
-                                                width="1.3em"
-                                                height="1.3em"
-                                                viewBox="0 0 20 20">
-                                                <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z" fill="currentColor" />
-                                            </svg>
-                                        </td>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Serial</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Name</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Email</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Age</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Material Art</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Material Art Name</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Action</th>
                                     </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
+                                </thead>
+                                <tbody>
+                                    {allPlayer.map?.((people, index) => {
+                                        return (
+                                            <tr>
+                                                <td className="px-2 py-1 text-sm w-[7ch] text-center border-collapse border border-gray-300 antialiased ">{index + 1}</td>
+                                                <td className="px-2 py-1 text-sm border-collapse border border-gray-300 antialiased ">{people?.name}</td>
+                                                <td className="px-2 py-1 text-sm border-collapse border border-gray-300 antialiased ">{people?.email}</td>
+                                                <td className="px-2 py-1 text-sm w-[5ch] text-center border-collapse border border-gray-300 antialiased ">{people?.age}</td>
+                                                <td className="px-2 py-1 text-sm border-collapse border border-gray-300 antialiased ">{people?.isInM_Art}</td>
+                                                <td className="px-2 py-1 text-sm border-collapse border border-gray-300 antialiased ">{people?.martialArtType || "NO"}</td>
+                                                <td tabIndex={1} className="px-2 py-1 border-collapse border border-gray-300 antialiased focus:bg-red-200 ">
+                                                    <svg
+                                                        onClick={() => handleDelete(people?._id)}
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        className="text-red-500 cursor-pointer hover:text-red-900"
+                                                        role="img"
+                                                        width="1.3em"
+                                                        height="1.3em"
+                                                        viewBox="0 0 20 20">
+                                                        <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z" fill="currentColor" />
+                                                    </svg>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        ) : (
+                            <h1 className="text-2xl text-center py-5">No Data</h1>
+                        )}
+                    </>
                 ) : (
                     <h1 className="text-2xl text-center py-5">Loading...</h1>
                 )}
