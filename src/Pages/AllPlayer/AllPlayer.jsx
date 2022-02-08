@@ -54,8 +54,8 @@ const AllPlayer = () => {
                                         <th className="text-left px-2 py-1 border-collapse border border-gray-300">Name</th>
                                         <th className="text-left px-2 py-1 border-collapse border border-gray-300">Email</th>
                                         <th className="text-left px-2 py-1 border-collapse border border-gray-300">Age</th>
-                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Material Art</th>
-                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Material Art Name</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Martial Art</th>
+                                        <th className="text-left px-2 py-1 border-collapse border border-gray-300">Martial Art Name</th>
                                         <th className="text-left px-2 py-1 border-collapse border border-gray-300">Action</th>
                                     </tr>
                                 </thead>

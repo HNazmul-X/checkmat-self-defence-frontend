@@ -41,7 +41,7 @@ const Homepage = () => {
                                 <div className="p-1 w-1/2">
                                     <div className="flex flex-col ">
                                         <p className="bg-white lg:text-lg font-medium uppercase text-black text-center text-[10px]">checkmat </p>
-                                        <p className="bg-black lg:text-lg font-medium uppercase text-white text-center text-[10px]">Themecula </p>
+                                        <p className="bg-black lg:text-lg font-medium uppercase text-white text-center text-[10px]">Temecula </p>
                                     </div>
                                 </div>
                                 <div className="p-1 w-1/2">
@@ -65,7 +65,7 @@ const Homepage = () => {
                     <div className="bg-white p-4 mt-5 text-center text-gray-600">
                         <h3 className="lg:text-3xl text-sm font-bold italic uppercase">Women , Men and COUPLES All Welcome</h3>
                         <h1 className="text-2xl uppercase py-3 font-black">Limited Availability</h1>
-                        <h3>24831 Jefferson ave. suite 101, murrieta, ca 92562</h3>
+                        <h3>Jefferson Ave. Suite 101, Murrieta, CA 92562</h3>
                     </div>
                 </div>
             </section>

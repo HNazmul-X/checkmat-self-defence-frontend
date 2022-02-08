@@ -23,7 +23,7 @@ const Login = () => {
 
     return (
         <>
-            <div className="max-w-[800px] p-10 bg-rose-100 mx-auto mt-5">
+            <div className="max-w-[800px] p-10 bg-gray-200 mx-auto mt-5">
                 <h1 className="text-4xl text-center">Login</h1>
                 <p className="text-center">Paste Your Token Here</p>
                 <div className="">
